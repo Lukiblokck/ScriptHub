@@ -93,6 +93,8 @@ local scripts = {
 
     ["Ban Hammer v3 pls funciona"] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/banhammerv3.lua"))()
+        wait(0.05)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/banhammerv3pt2.lua"))()
     end
 }
 
