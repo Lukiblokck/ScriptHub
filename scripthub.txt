@@ -25,7 +25,7 @@ local scripts = {
     
     ["c00lguifan"] = function()
         pcall(function()
-            require(14125553864):Fire("nytrfe_n0official","c00lkidd")
+            require(14125553864):Fire("nytrfe_n0official")
         end)
     end,
     
@@ -101,6 +101,18 @@ local scripts = {
 
     ["omega hammer"] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/omegaban.lua"))()
+    end,
+
+    ["c00lGUI25"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukiblokck/My-Roblox-Scripts/refs/heads/main/c00lgui25.lua"))()
+    end,
+
+    ["Dex Explorer V1"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+    end,
+
+    ["Dex Explorer V1"] = function()
+        loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex Explorer V2.txt"))()
     end
 }
 
