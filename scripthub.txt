@@ -1,7 +1,6 @@
--- Script Selector Menu
+-- nytrfe_n0's ScriptHub
 -- Creado por Luki
 
--- Scripts disponibles
 local scripts = {
     ["Infinite Yield FE"] = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
@@ -111,204 +110,142 @@ local scripts = {
         loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
     end,
 
-    ["Dex Explorer V1"] = function()
-        loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex Explorer V2.txt"))()
-    end,
-
     ["Roblox_Egor's Fake Lag"] = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/GBmWn4eZ", true))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/GBmWn4eZ", true))()
     end,
 
     ["c00lkidd 2025 Executor"] = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/rtlsmonk/c00lgui-made-by-rtls_a1-on-discord/refs/heads/main/have-fun"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rtlsmonk/c00lgui-made-by-rtls_a1-on-discord/refs/heads/main/have-fun"))()
     end
 }
 
 -- Interfaz gráfica
-local ScreenGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local UIListLayout = Instance.new("UIListLayout")
-local CloseButton = Instance.new("TextButton")
-local MinimizeButton = Instance.new("TextButton")
-local MinimizedButton = Instance.new("ImageButton")
+local green = Color3.fromRGB(40, 200, 100)
+local darkGreen = Color3.fromRGB(20, 40, 20)
 
--- Propiedades de la interfaz
-ScreenGui.Name = "ScriptSelector"
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.ResetOnSpawn = false
+local gui = Instance.new("ScreenGui", game.CoreGui)
+gui.Name = "nytrfe_n0_ScriptHub"
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+gui.ResetOnSpawn = false
 
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-MainFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
-MainFrame.BorderSizePixel = 2
-MainFrame.Position = UDim2.new(0.5, -150, 0.5, -125)
-MainFrame.Size = UDim2.new(0, 300, 0, 250)
-MainFrame.Active = true
-MainFrame.Draggable = true
+local main = Instance.new("Frame", gui)
+main.BackgroundColor3 = darkGreen
+main.Position = UDim2.new(0.5, -150, 0.5, -125)
+main.Size = UDim2.new(0, 300, 0, 250)
+main.Active = true
+main.Draggable = true
+main.BorderSizePixel = 2
+main.BorderColor3 = green
 
-Title.Name = "Title"
-Title.Parent = MainFrame
-Title.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Title.Size = UDim2.new(1, 0, 0, 30)
-Title.Font = Enum.Font.SourceSansBold
-Title.Text = "Selector de Scripts"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 18.000
+local title = Instance.new("TextLabel", main)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundColor3 = green
+title.Text = "nytrfe_n0's ScriptHub"
+title.Font = Enum.Font.SourceSansBold
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 18
 
-ScrollingFrame.Name = "ScrollingFrame"
-ScrollingFrame.Parent = MainFrame
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-ScrollingFrame.BorderSizePixel = 0
-ScrollingFrame.Position = UDim2.new(0, 10, 0, 40)
-ScrollingFrame.Size = UDim2.new(1, -20, 1, -50)
-ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
-ScrollingFrame.ScrollBarThickness = 6
+local closeBtn = Instance.new("TextButton", main)
+closeBtn.Size = UDim2.new(0, 20, 0, 20)
+closeBtn.Position = UDim2.new(1, -25, 0, 5)
+closeBtn.Text = "X"
+closeBtn.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+closeBtn.TextColor3 = Color3.new(1, 1, 1)
+closeBtn.Font = Enum.Font.SourceSansBold
+closeBtn.TextSize = 14
+closeBtn.MouseButton1Click:Connect(function() gui:Destroy() end)
 
-UIListLayout.Parent = ScrollingFrame
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 5)
+local minimizeBtn = Instance.new("TextButton", main)
+minimizeBtn.Size = UDim2.new(0, 20, 0, 20)
+minimizeBtn.Position = UDim2.new(1, -50, 0, 5)
+minimizeBtn.Text = "-"
+minimizeBtn.BackgroundColor3 = green
+minimizeBtn.TextColor3 = Color3.new(1, 1, 1)
+minimizeBtn.Font = Enum.Font.SourceSansBold
+minimizeBtn.TextSize = 18
 
-CloseButton.Name = "CloseButton"
-CloseButton.Parent = MainFrame
-CloseButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
-CloseButton.Position = UDim2.new(1, -25, 0, 5)
-CloseButton.Size = UDim2.new(0, 20, 0, 20)
-CloseButton.Font = Enum.Font.SourceSansBold
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.TextSize = 14.000
+local minimizedBtn = Instance.new("ImageButton", gui)
+minimizedBtn.Size = UDim2.new(0, 40, 0, 40)
+minimizedBtn.Position = UDim2.new(0.05, 0, 0.5, 0)
+minimizedBtn.Image = "rbxassetid://3926307971"
+minimizedBtn.ImageRectOffset = Vector2.new(404, 844)
+minimizedBtn.ImageRectSize = Vector2.new(36, 36)
+minimizedBtn.BackgroundColor3 = darkGreen
+minimizedBtn.BorderColor3 = green
+minimizedBtn.BorderSizePixel = 2
+minimizedBtn.ImageColor3 = green
+minimizedBtn.Visible = false
 
--- Botón de minimizar
-MinimizeButton.Name = "MinimizeButton"
-MinimizeButton.Parent = MainFrame
-MinimizeButton.BackgroundColor3 = Color3.fromRGB(50, 120, 200)
-MinimizeButton.Position = UDim2.new(1, -50, 0, 5)
-MinimizeButton.Size = UDim2.new(0, 20, 0, 20)
-MinimizeButton.Font = Enum.Font.SourceSansBold
-MinimizeButton.Text = "-"
-MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-MinimizeButton.TextSize = 18.000
-
--- Botón minimizado
-MinimizedButton.Name = "MinimizedButton"
-MinimizedButton.Parent = ScreenGui
-MinimizedButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-MinimizedButton.BorderColor3 = Color3.fromRGB(60, 60, 200)
-MinimizedButton.BorderSizePixel = 2
-MinimizedButton.Position = UDim2.new(0.05, 0, 0.5, 0)
-MinimizedButton.Size = UDim2.new(0, 40, 0, 40)
-MinimizedButton.Image = "rbxassetid://3926307971"
-MinimizedButton.ImageRectOffset = Vector2.new(404, 844)
-MinimizedButton.ImageRectSize = Vector2.new(36, 36)
-MinimizedButton.ImageColor3 = Color3.fromRGB(70, 160, 255)
-MinimizedButton.Visible = false
-MinimizedButton.Active = true
-MinimizedButton.Draggable = true
-
--- Función para cerrar el GUI
-CloseButton.MouseButton1Click:Connect(function()
-    ScreenGui:Destroy()
+minimizeBtn.MouseButton1Click:Connect(function()
+    main.Visible = false
+    minimizedBtn.Visible = true
 end)
 
--- Función para minimizar
-MinimizeButton.MouseButton1Click:Connect(function()
-    MainFrame.Visible = false
-    MinimizedButton.Visible = true
+minimizedBtn.MouseButton1Click:Connect(function()
+    main.Visible = true
+    minimizedBtn.Visible = false
 end)
 
--- Función para maximizar
-MinimizedButton.MouseButton1Click:Connect(function()
-    MainFrame.Visible = true
-    MinimizedButton.Visible = false
-end)
+local scroll = Instance.new("ScrollingFrame", main)
+scroll.Position = UDim2.new(0, 10, 0, 40)
+scroll.Size = UDim2.new(1, -20, 1, -50)
+scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+scroll.BackgroundColor3 = Color3.fromRGB(30, 60, 30)
+scroll.ScrollBarThickness = 6
 
--- Función para ejecutar scripts con manejo de errores
-local function executeScript(scriptName, scriptFunction)
-    local success, error = pcall(scriptFunction)
-    if not success then
-        warn("Error ejecutando " .. scriptName .. ": " .. tostring(error))
-        return false
-    end
-    return true
-end
+local layout = Instance.new("UIListLayout", scroll)
+layout.Padding = UDim.new(0, 5)
+layout.SortOrder = Enum.SortOrder.LayoutOrder
 
--- Función para mostrar notificación
+-- Notificación
 local function showNotification(message, isError)
-    local notification = Instance.new("TextLabel")
-    notification.Name = "Notification"
-    notification.Parent = MainFrame
-    notification.BackgroundColor3 = isError and Color3.fromRGB(180, 40, 40) or Color3.fromRGB(40, 180, 40)
-    notification.BorderSizePixel = 0
-    notification.Position = UDim2.new(0, 0, 1, 0)
-    notification.Size = UDim2.new(1, 0, 0, 30)
-    notification.Font = Enum.Font.SourceSansBold
-    notification.Text = message
-    notification.TextColor3 = Color3.fromRGB(255, 255, 255)
-    notification.TextSize = 16.000
-    
-    -- Animación de aparición
-    local tweenIn = game:GetService("TweenService"):Create(
-        notification,
-        TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-        {Position = UDim2.new(0, 0, 1, -30)}
-    )
-    tweenIn:Play()
-    
-    -- Eliminar la notificación después de 2 segundos
-    game:GetService("Debris"):AddItem(notification, 3)
+    local n = Instance.new("TextLabel", main)
+    n.Text = message
+    n.Size = UDim2.new(1, 0, 0, 30)
+    n.Position = UDim2.new(0, 0, 1, 0)
+    n.Font = Enum.Font.SourceSansBold
+    n.TextSize = 16
+    n.BackgroundColor3 = isError and Color3.fromRGB(180, 40, 40) or green
+    n.TextColor3 = Color3.new(1, 1, 1)
+    n.BorderSizePixel = 0
+
+    game:GetService("TweenService"):Create(n, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 1, -30)}):Play()
+    game:GetService("Debris"):AddItem(n, 3)
     wait(2)
-    local tweenOut = game:GetService("TweenService"):Create(
-        notification,
-        TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
-        {Position = UDim2.new(0, 0, 1, 0)}
-    )
-    tweenOut:Play()
+    game:GetService("TweenService"):Create(n, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 1, 0)}):Play()
 end
 
--- Añadir scripts al scrolling frame
-local buttonNumber = 0
-for scriptName, scriptFunction in pairs(scripts) do
-    local ScriptButton = Instance.new("TextButton")
-    ScriptButton.Name = scriptName
-    ScriptButton.Parent = ScrollingFrame
-    ScriptButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-    ScriptButton.BorderColor3 = Color3.fromRGB(70, 70, 70)
-    ScriptButton.Size = UDim2.new(1, -10, 0, 40)
-    ScriptButton.Font = Enum.Font.SourceSans
-    ScriptButton.Text = scriptName
-    ScriptButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    ScriptButton.TextSize = 16.000
-    
-    -- Efecto hover
-    ScriptButton.MouseEnter:Connect(function()
-        ScriptButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+-- Crear botones
+local count = 0
+for name, func in pairs(scripts) do
+    local btn = Instance.new("TextButton", scroll)
+    btn.Text = name
+    btn.Size = UDim2.new(1, -10, 0, 40)
+    btn.BackgroundColor3 = Color3.fromRGB(30, 90, 30)
+    btn.BorderColor3 = green
+    btn.TextColor3 = Color3.new(1, 1, 1)
+    btn.Font = Enum.Font.SourceSans
+    btn.TextSize = 16
+
+    btn.MouseEnter:Connect(function()
+        btn.BackgroundColor3 = green
     end)
-    
-    ScriptButton.MouseLeave:Connect(function()
-        ScriptButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    btn.MouseLeave:Connect(function()
+        btn.BackgroundColor3 = Color3.fromRGB(30, 90, 30)
     end)
-    
-    -- Ejecutar el script cuando se hace clic en el botón
-    ScriptButton.MouseButton1Click:Connect(function()
-        local success = executeScript(scriptName, scriptFunction)
+
+    btn.MouseButton1Click:Connect(function()
+        local success, err = pcall(func)
         if success then
-            showNotification("¡" .. scriptName .. " ejecutado!")
+            showNotification("¡" .. name .. " ejecutado!")
         else
-            showNotification("Error ejecutando " .. scriptName, true)
+            showNotification("Error ejecutando " .. name, true)
+            warn(err)
         end
     end)
     
-    buttonNumber = buttonNumber + 1
+    count += 1
 end
 
--- Ajustar tamaño del ScrollingFrame basado en el número de botones
-ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, buttonNumber * 45)
-
--- Mensaje de inicio
-print("Selector de Scripts cargado correctamente. ¡Disfruta!")
+scroll.CanvasSize = UDim2.new(0, 0, 0, count * 45)
+print("nytrfe_n0's ScriptHub cargado con éxito.")
