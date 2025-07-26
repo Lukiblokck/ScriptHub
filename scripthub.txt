@@ -113,6 +113,16 @@ local scripts = {
 
     ["Dex Explorer V1"] = function()
         loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex Explorer V2.txt"))()
+    end,
+
+    ["Roblox_Egor's Fake Lag"] = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/GBmWn4eZ", true))()
+    end,
+
+    ["c00lkidd 2025 Executor"] = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rtlsmonk/c00lgui-made-by-rtls_a1-on-discord/refs/heads/main/have-fun"))()
     end
 }
 
