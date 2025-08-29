@@ -116,6 +116,10 @@ local scripts = {
 
     ["c00lkidd 2025 Executor"] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/rtlsmonk/c00lgui-made-by-rtls_a1-on-discord/refs/heads/main/have-fun"))()
+    end,
+
+    ["Invisible FE"] = function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
     end
 }
 
