@@ -123,7 +123,7 @@ local scripts = {
     end,
 
     ["Ink Game Hacks"] = function()
-        loadstring(game:HttpGet("https://link-hub.net/637154/oGi5x1McUuGR"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua", true))()
     end
 }
 
