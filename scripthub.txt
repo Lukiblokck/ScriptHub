@@ -120,6 +120,10 @@ local scripts = {
 
     ["Invisible FE"] = function()
         loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+    end,
+
+    ["Ink Game Hacks"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/OverflowBGSI/Overflow/refs/heads/main/loader.txt"))()
     end
 }
 
