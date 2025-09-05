@@ -124,6 +124,11 @@ local scripts = {
 
     ["Ink Game Hacks"] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua", true))()
+    end,
+
+    ["Instant Stealer"] = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/darkdexv2/freemiumstealer/refs/heads/main/stealanimefreemiumstealer.obfuscatedtxt"))()
     end
 }
 
